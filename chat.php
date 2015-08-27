@@ -9,7 +9,7 @@ $user = $_GET['user'];
     <link href="css/icon.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/chat.css">
     <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="js/chat.js"></script>
+    
     <title>iChat</title>
 </head>
 
@@ -72,7 +72,7 @@ $user = $_GET['user'];
   </div>
 </div>
 </div>
-
+<!--2nd chat box-->
 <div class="cont">
 <div class="chatName" style="font-size: 30px; color: white;">
    Chat with:
@@ -81,21 +81,6 @@ $user = $_GET['user'];
 <div class="chatCont">
   <div class="chatMessages">
 
-  <?php
-
-  $db = new PDO('mysql:host=127.0.0.1;dbname=chat','root','');
-
-  $query = $db->prepare("SELECT * FROM messages");
-  $query->execute();
-
-  while($fetch = $query->fetch(PDO::FETCH_ASSOC))
-  {
-    $name = $fetch['name'];
-    $message = $fetch['messages'];
-
-    echo "<li class='cm'><b>".ucwords($name)."</b>:".$message."</li>";
-  }
-  ?>
   
   </div>
   <div class="chatBottom2">
@@ -137,6 +122,7 @@ $user = $_GET['user'];
 </div>
 </div>
 
+<script type="text/javascript" src="js/chat.js"></script>
 
 <?php
 
