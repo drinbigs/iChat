@@ -24,4 +24,12 @@ $(function(){
 	}
 	setInterval(function(){getMessages();},100);
 
+	$(function(){
+	var d = $('.chatMessages');
+	d.animate({ scrollTop: d.prop('scrollHeight') }, 1000);
+	});
+
 });
+
+
+
