@@ -16,17 +16,6 @@ $user = $_GET['user'];
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
 
-<nav>
-    <div class="nav-wrapper blue darken-3">
-    <a href="" class="brand-logo left">iChat</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down"  >
-        <li style="width: 200px;"><a class="dropdown-button user-btn" href="#" data-activates="dropdown1">
-        <?php echo ucwords($user) ?><i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-      </ul>
- 
-    </div> 
-</nav>
-
 <form action="" method="post">
 <ul id="dropdown1" class="dropdown-content" >
   <li><a href="">Account</a></li>
@@ -36,10 +25,20 @@ $user = $_GET['user'];
 </ul>
 </form>
 
+<nav>
+    <div class="nav-wrapper blue darken-3">
+    <a href="" class="brand-logo left">iChat</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down"  >
+        <li style="width: 200px;"><a class="dropdown-button user-btn" href="#" data-activates="dropdown1">
+        <?php echo ucwords($user) ?><i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+      </ul>
+    </div> 
+</nav>
+
 <div class="cont">
 
 <div class="chatName" style="font-size: 30px; color: white;">
-   Chat with:
+    <i class="material-icons ic">public</i>&nbsp;Public
 </div>
 
 <div class="chatCont">
