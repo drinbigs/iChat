@@ -19,9 +19,8 @@ $user = $_GET['user'];
 
 <form action="" method="post">
 <ul id="dropdown1" class="dropdown-content" style="overflow-x: hidden;">
-  <li><a href=""> <?php echo ucwords($user) ?></a></li>
+  <li><a href=""> <?php echo ucwords($user)?></a></li>
   <li class="divider"></li>
-  <li><a href="">Account</a></li>
   <li><a href="">Log Out</a></li>
 </ul>
 </form>
@@ -66,8 +65,8 @@ $user = $_GET['user'];
   <div class="chatBottom2">
     <form action="" onclick="" id="chatForm" method="post">
       <input type="hidden" id="name" name="name" value="<?php echo ucwords($user) ?>"/>
-      <input type="text" name="text" id="text" value="" placeholder="Type your chat message"/>
-      <input type="submit" name="submit" value="Send"/>
+      <input type="text" name="text" id="text" value="" placeholder="Type your message"/>
+      <input type="submit" name="submit" value="Send" />
     </form>
   </div>
 </div>
@@ -75,7 +74,7 @@ $user = $_GET['user'];
 <!--2nd chat box-->
 <div class="cont">
 <div class="chatName" style="font-size: 30px; color: white;">
-   Chat with:
+   <i class="material-icons ic">supervisor_account</i>&nbsp;Private
 </div>
 
 <div class="chatCont">
@@ -86,7 +85,7 @@ $user = $_GET['user'];
   <div class="chatBottom2">
     <form action="" onclick="" id="chatForm" method="post">
       <input type="hidden" id="name" name="name" value="<?php echo ucwords($user) ?>"/>
-      <input type="text" name="text" id="text" value="" placeholder="Type your chat message"/>
+      <input type="text" name="text" id="text" value="" placeholder="Type your message"/>
       <input type="submit" name="submit" value="Send"/>
     </form>
   </div>
@@ -96,7 +95,7 @@ $user = $_GET['user'];
 
 <div class="col s3">
   <div class="fcon">
-    <div class="ubar">Friend List</div>
+    <div class="ubar">Online User/s</div>
     <div class="nlist">
         <ul>
           <div class="divider"></div>
