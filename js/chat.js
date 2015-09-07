@@ -7,7 +7,7 @@ $(function(){
 
 		if(text != "" && name != "")
 		{
-			$.post('chatPoster.php',{text: text, name: name}, function(data){
+			$.post('model/chatPoster.php',{text: text, name: name}, function(data){
 				$(".chatMessages").append(data);
 			});
 		}
@@ -18,11 +18,11 @@ $(function(){
 	});
 
 	function getMessages(){
-		$.get('getMessages.php',function(data){
+		$.get('model/chat_model.php',function(data){
 				$(".chatMessages").html(data);
 			});
 	}
-	setInterval(function(){getMessages();},100);
+	setInterval(function(){getMessages();},10);
 
 	$(function(){
 	var d = $('.chatMessages');
