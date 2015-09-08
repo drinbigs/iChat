@@ -11,6 +11,7 @@ include('model/session.php');
     <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
     
     <title>iChat</title>
+
 </head>
 
 <body>
@@ -19,8 +20,6 @@ include('model/session.php');
 
 <form action="" method="post">
 <ul id="dropdown1" class="dropdown-content" style="overflow-x: hidden;">
-   <!-- <li><a href=""> <?php echo date('Y m d H:i:s', $_SESSION['loggedin_time']); ?></a></li>
-   <li class="divider"></li> -->
   <li><a href="index.php?action=logout">Log Out</a></li>
 </ul>
 </form>
@@ -77,8 +76,6 @@ $qry = "SELECT username from logged";
     }
 }}
 ?>
-
-
 
 <?php
 

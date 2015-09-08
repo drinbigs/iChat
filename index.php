@@ -40,13 +40,21 @@ function chat(){
 function login(){
 	include "model/log_model.php";
 	$result = log_in();
-	if($result){
+	if($result == true){
 		echo "<script type=\"text/javascript\">".
-		"alert('Success!');".
+		"alert('Congratulations! You may start chatting now.');".
         "location.replace('index.php?action=chat');".
         "</script>";
         // header('index.php?action=chat');
 		return true;
+	}
+
+	else if($result == null){
+		echo "<script type=\"text/javascript\">".
+        "alert('User must be bigger than 5 chars and contain only digits, letters and underscore!');".
+        "location.replace('index.php?action=home');".
+        "</script>";
+
 	}
 	else{
 		echo "<script type=\"text/javascript\">".

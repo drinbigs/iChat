@@ -5,16 +5,14 @@ session_start(); // Starting Session
 	$errflag = false;
 
 	if (isset($_POST['submit'])) {
-	if (empty($_POST['username'])) {
-	$error = "Username is invalid";
-	}
-	else
-	{
 	// Define $username and $password
 
 		$username=$_POST['username'];
+		if(preg_match("/^[0-9a-zA-Z_]{5,}$/", $username) === 0){
+			return null;
+		}
 		//$password=md5($_POST['password']);
-
+		else{
 	// Establishing Connection with Server by passing server_name, user_id and password as a parameter
 		$connection = mysqli_connect("localhost", "root", "");
 	// To protect MySQL injection for Security purpose
