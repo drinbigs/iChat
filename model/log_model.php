@@ -8,13 +8,13 @@ session_start(); // Starting Session
 		$username=$_POST['username'];
 		if(preg_match("/^[0-9a-zA-Z_]{5,}$/", $username) === 0){
 			 echo "<script type=\"text/javascript\">".
-	         "alert('User must be bigger than 5 chars and contain only digits, letters and underscore!');".
+	         "alert('Codename must contain atleast 5 characters, digits, letters and underscore!');".
 	         "location.replace('index.php?action=home');".
 	         "</script>";
 			return null;
 		}
 		else{
-			// Establishing Connection with Server by passing server_name, user_id and password as a parameter
+				// Establishing Connection with Server by passing server_name, user_id and password as a parameter
 			$connection = mysqli_connect("localhost", "root", "");
 				// To protect MySQL injection for Security purpose
 			$username = stripslashes($username);

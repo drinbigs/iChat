@@ -11,8 +11,6 @@
 				$insert = "INSERT INTO `messages`(`sess_time`, `username`, `message`) VALUES (NOW(),'".$name."','".$text."')";
 				$query = mysqli_query($conn, $insert);
 				return true;
-
-				/*echo "<li class='cm'><b>".ucwords($name)."</b>:".$message."</li>";*/
 			}
 		}
 

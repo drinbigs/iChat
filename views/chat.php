@@ -81,7 +81,7 @@ include('model/session.php');
 
 <script type="text/javascript" src="js/chat.js"></script>
 
-<?php
+  <?php
 
   if(isset($_POST['name']) && isset($_POST['text']))
   {
@@ -91,7 +91,7 @@ include('model/session.php');
     }
   }
 
- ?>
+  ?>
 
 </body>
 </html>
