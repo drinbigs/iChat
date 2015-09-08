@@ -6,7 +6,7 @@ include 'session.php';
 	$query = mysqli_query($connection, $qry);
 	
 	if($query) {
-		echo "--> " .$login_session. " is now online";
+		echo "<i>" .$login_session. " is now online</i>";
 	if (mysqli_num_rows($query) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($query)) {
