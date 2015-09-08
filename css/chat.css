@@ -186,7 +186,6 @@ ul{
 }
 
 .userbtn{
-	width: 200px; 
 	margin-top:0px;
 	overflow-x: hidden;
 }
@@ -196,6 +195,14 @@ ul{
 	position: fixed;
 	top: 40%;
 	left: 40%;
+}
+
+#modal1{
+	height: 48%; 
+	width: 40%; 
+	margin-top: 8%; 
+	overflow-y:hidden;
+	border-radius: 5px;
 }
 
 
