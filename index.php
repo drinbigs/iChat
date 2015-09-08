@@ -1,23 +1,18 @@
 <?php
 //main controller
-//require_once 'views/header.php';
-
 
 if( isset($_GET['action']) ){
 	switch($_GET['action']){
 
-	/****** switch cases for views in mainpage nav ******/
+	/****** switch cases ******/
 	case "login":
 		login();
-		break;
-
-	case "register":
-		register();
 		break;
 
 	case "chat":
 		chat();
 		break;
+
 	case "logout":
 		logout();
 		break;
@@ -38,40 +33,47 @@ function home(){
 
 }
 
+function chat(){
+	include "views/chat.php";
+}
+
 function login(){
 	include "model/log_model.php";
 	$result = log_in();
 	if($result){
 		echo "<script type=\"text/javascript\">".
+		"alert('Success!');".
         "location.replace('index.php?action=chat');".
-         //replace with student home
         "</script>";
+        // header('index.php?action=chat');
+		return true;
 	}
 	else{
 		echo "<script type=\"text/javascript\">".
-        "alert('Invalid username or password!');".
+        "alert('Username is currently online!');".
         "location.replace('index.php?action=home');".
         "</script>";
+		
 	}
 
 }
 
-function register(){
-	include "model/user_model.php";
-	$result = reg();
-	if($result){
-		echo "<script type=\"text/javascript\">".
-		"alert('Successfully registered! You may log in now.');".
-		"location.replace('index.php?action=home');".
-		 "</script>";
-	}
+// function register(){
+// 	include "model/user_model.php";
+// 	$result = reg();
+// 	if($result){
+// 		echo "<script type=\"text/javascript\">".
+// 		"alert('Successfully registered! You may log in now.');".
+// 		"location.replace('index.php?action=home');".
+// 		 "</script>";
+// 	}
 
-	else{
-		echo "<script type=\"text/javascript\">".
-		"alert('Registration failed. Try again.');".
-		"location.replace('index.php?action=home');".
-		"</script>";
-	}
+// 	else{
+// 		echo "<script type=\"text/javascript\">".
+// 		"alert('Registration failed. Try again.');".
+// 		"location.replace('index.php?action=home');".
+// 		"</script>";
+// 	}
 
 	// $results = reg();
 	// 	if($results){
@@ -85,11 +87,6 @@ function register(){
 	//         "</script>";
 	// 	}
 	// login();
-}
-
-function chat(){
-	include "views/chat.php";
-}
 
 function logout(){
 	include "model/logout.php";

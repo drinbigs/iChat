@@ -22,7 +22,7 @@ $(function(){
 				$(".chatMessages").html(data);
 			});
 	}
-	setInterval(function(){getMessages();},10);
+	setInterval(function(){getMessages();},0.000000001);
 
 	$(function(){
 	var d = $('.chatMessages');

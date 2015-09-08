@@ -60,8 +60,25 @@ include('model/session.php');
 </div>
 </div>
 
-
 <script type="text/javascript" src="js/chat.js"></script>
+
+<?php
+
+$qry = "SELECT username from logged";
+    $query = mysqli_query($connection, $qry);
+  
+  if($query) {
+  if (mysqli_num_rows($query) > 0) {
+    while($row = mysqli_fetch_assoc($query)) {
+
+      echo "<tr><td>".$row["username"]."</td></tr><br/>";
+
+        
+    }
+}}
+?>
+
+
 
 <?php
 

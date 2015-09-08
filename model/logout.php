@@ -1,7 +1,10 @@
 <?php
-session_start();
+include 'session.php';
 if(session_destroy()) // Destroying All Sessions
 {
-header("Location: index.php"); // Redirecting To Home Page
+	include 'connection.php';
+	$que = "DELETE from logged WHERE username = '$login_session'";
+	$result = mysqli_query($conn, $que);
+	header("Location: index.php"); // Redirecting To Home Page
 }
 ?>
