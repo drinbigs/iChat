@@ -1,12 +1,6 @@
 <?php
 include 'session.php';
-   // $db = new PDO('mysql:host=127.0.0.1;dbname=ichat','root','');
 
-    //include 'model/session.php';
-     // $q = $db->prepare("SELECT start_time FROM logged where username='$user_check'");
-    // $q->execute();
-    // $stime =$_SESSION['loggedin_time'];
-    // $dtime = strtotime($stime);
 
     $qry = "SELECT * FROM messages where sess_time>(SELECT start_time from logged where username = '$login_session')";
 	$query = mysqli_query($connection, $qry);
@@ -23,14 +17,4 @@ include 'session.php';
 
 }
 }
-
-    // $query = $db->prepare("SELECT * FROM messages where sess_time>(SELECT start_time from logged where username = '$login_session')");
-    // $query->execute();
-
-    // while($fetch = $query->fetch(PDO::FETCH_ASSOC))
-    // {
-    //     $name = $fetch['username'];
-    //     $message = $fetch['message'];
-    //     echo "<li class='cm'><b>".ucwords($name)."</b>:".$message."</li>";
-    // }
 ?>

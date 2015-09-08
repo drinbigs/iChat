@@ -1,6 +1,6 @@
 <?php
 
-		$db = new PDO('mysql:host=127.0.0.1;dbname=ichat','root','');
+		include 'connection.php';
 		if(isset($_POST['text']) && isset($_POST['name']))
 		{
 			
@@ -8,8 +8,9 @@
 			$name = strip_tags(stripslashes($_POST['name']));
 			if(!empty($text) && !empty($name))
 			{
-				$insert = $db->prepare("INSERT INTO `messages`(`sess_time`, `username`, `message`) VALUES (NOW(),'".$name."','".$text."')");
-				$insert->execute();
+				$insert = "INSERT INTO `messages`(`sess_time`, `username`, `message`) VALUES (NOW(),'".$name."','".$text."')";
+				$query = mysqli_query($conn, $insert);
+				return true;
 
 				/*echo "<li class='cm'><b>".ucwords($name)."</b>:".$message."</li>";*/
 			}
